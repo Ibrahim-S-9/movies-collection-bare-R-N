@@ -11,6 +11,7 @@ import React, {useEffect} from 'react';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useDataContext} from '../contexts/DataContext';
 import {useNavigation} from '@react-navigation/native';
+import i18n from '../config/i18n';
 
 export default function Movie() {
   const {movies, setMovies, movie, setSelectedMovie, colors} = useDataContext();
@@ -143,10 +144,14 @@ export default function Movie() {
         {movie.description}
       </Text>
       <TouchableOpacity onPress={handleEdition} style={styles.editBtn}>
-        <Text style={[styles.details, {color: 'white'}]}>Edit</Text>
+        <Text style={[styles.details, {color: 'white'}]}>
+          {i18n.t('movie.editBtn')}
+        </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={handleDeletion} style={styles.deleteBtn}>
-        <Text style={[styles.details, {color: 'white'}]}>Delete movie</Text>
+        <Text style={[styles.details, {color: 'white'}]}>
+          {i18n.t('movie.deleteBtn')}
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   );

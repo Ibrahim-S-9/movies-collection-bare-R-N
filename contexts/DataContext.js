@@ -2,6 +2,7 @@ import {createContext, useContext, useState} from 'react';
 import MoviesData from '../MoviesData.json';
 import {usethemeProvider} from '../styles/globalVariables';
 import {useColorScheme} from 'react-native';
+import i18n from '../config/i18n';
 
 const DataContext = createContext();
 export const useDataContext = () => useContext(DataContext);
@@ -11,7 +12,15 @@ export function DataContextProvider({children}) {
   const [movie, setMovie] = useState({});
   const [selectedMovie, setSelectedMovie] = useState({});
   const isDarkMode = useColorScheme() === 'dark';
-  const colors = usethemeProvider(isDarkMode);
+  const [darkModeswitch, setDarkModeSwitch] = useState(isDarkMode);
+  const colors = usethemeProvider(isDarkMode && darkModeswitch);
+
+  const [locale, setLocale] = useState(i18n.locale);
+
+  const changeLanguage = lang => {
+    i18n.locale = lang;
+    setLocale(lang);
+  };
 
   return (
     <DataContext.Provider
@@ -23,6 +32,10 @@ export function DataContextProvider({children}) {
         selectedMovie,
         setSelectedMovie,
         colors,
+        locale,
+        changeLanguage,
+        darkModeswitch,
+        setDarkModeSwitch,
       }}>
       {children}
     </DataContext.Provider>

@@ -1,8 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import {useEffect, useRef} from 'react';
-import {View, Text, StyleSheet, TextInput, Pressable} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Pressable, Alert} from 'react-native';
 import {useDataContext} from '../contexts/DataContext';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import i18n from '../config/i18n';
 
 export default function EditMovie() {
   const {movies, setMovies, setMovie, selectedMovie, setSelectedMovie, colors} =
@@ -39,8 +40,11 @@ export default function EditMovie() {
       !selectedMovie.genres ||
       !selectedMovie.rating
     ) {
-      Alert.alert('Oops!', 'Please fill in all fields before submitting.');
-      return;
+      Alert.alert(
+        i18n.t('alerts.missingFieldAlertTitle'),
+        i18n.t('alerts.missingFieldAlertMsg'),
+      );
+      return; 
     }
 
     const updatedData = movies.map(movie =>
@@ -90,11 +94,11 @@ export default function EditMovie() {
       contentContainerStyle={{flexGrow: 1}}
       style={{flex: 1, backgroundColor: colors.appBgColor}}>
       <View style={styles.form}>
-        <Text style={styles.label}>Edit movie :</Text>
-        <Text style={styles.subtitle}>Title</Text>
+        <Text style={styles.label}>{i18n.t('editMovie.label')}</Text>
+        <Text style={styles.subtitle}>{i18n.t('editMovie.movieTitleST')}</Text>
         <TextInput
           style={styles.input}
-          placeholder="Movie's title..."
+          placeholder={i18n.t('editMovie.movieTitlePH')}
           placeholderTextColor={colors.textPlaceholderColor}
           autoCapitalize={false}
           autoCorrect={false}
@@ -108,10 +112,10 @@ export default function EditMovie() {
           }}
           ref={titleRef}
         />
-        <Text style={styles.subtitle}>Poster's URL</Text>
+        <Text style={styles.subtitle}>{i18n.t('editMovie.moviePosterST')}</Text>
         <TextInput
           style={styles.input}
-          placeholder="Poster's URL..."
+          placeholder={i18n.t('editMovie.moviePosterPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           autoCapitalize={false}
           autoCorrect={false}
@@ -124,10 +128,12 @@ export default function EditMovie() {
           onSubmitEditing={() => releaseYearRef.current.focus()}
           ref={posterUrlRef}
         />
-        <Text style={styles.subtitle}>Release year</Text>
+        <Text style={styles.subtitle}>
+          {i18n.t('editMovie.movieReleaseYearST')}
+        </Text>
         <TextInput
           style={styles.input}
-          placeholder="Release year..."
+          placeholder={i18n.t('editMovie.movieReleaseYearPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           keyboardType="numeric"
           value={selectedMovie.releaseYear.toString()}
@@ -138,10 +144,12 @@ export default function EditMovie() {
           onSubmitEditing={() => descriptionRef.current.focus()}
           ref={releaseYearRef}
         />
-        <Text style={styles.subtitle}>Description</Text>
+        <Text style={styles.subtitle}>
+          {i18n.t('editMovie.movieDescriptionST')}
+        </Text>
         <TextInput
           style={[styles.input, {height: 100, textAlignVertical: 'top'}]}
-          placeholder="Description..."
+          placeholder={i18n.t('editMovie.movieDescriptionPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           multiline
           autoCapitalize={false}
@@ -154,10 +162,10 @@ export default function EditMovie() {
           onSubmitEditing={() => imdbUrlRef.current.focus()}
           ref={descriptionRef}
         />
-        <Text style={styles.subtitle}>IMDB URL</Text>
+        <Text style={styles.subtitle}>{i18n.t('editMovie.movieImdbST')}</Text>
         <TextInput
           style={styles.input}
-          placeholder="IMDB URL..."
+          placeholder={i18n.t('editMovie.movieImdbPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           autoCapitalize={false}
           autoCorrect={false}
@@ -170,10 +178,10 @@ export default function EditMovie() {
           onSubmitEditing={() => genresRef.current.focus()}
           ref={imdbUrlRef}
         />
-        <Text style={styles.subtitle}>Genre(s)</Text>
+        <Text style={styles.subtitle}>{i18n.t('editMovie.movieGenresST')}</Text>
         <TextInput
           style={styles.input}
-          placeholder="Genre(s)...[ separated by commas ]"
+          placeholder={i18n.t('editMovie.movieGenresPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           value={selectedMovie.genres.join(', ')}
           onChangeText={value =>
@@ -186,10 +194,10 @@ export default function EditMovie() {
           onSubmitEditing={() => ratingRef.current.focus()}
           ref={genresRef}
         />
-        <Text style={styles.subtitle}>Rating</Text>
+        <Text style={styles.subtitle}>{i18n.t('editMovie.movieRatingST')}</Text>
         <TextInput
           style={styles.input}
-          placeholder="Your Rating...[ from 0 to 10 ]"
+          placeholder={i18n.t('editMovie.movieRatingPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           keyboardType="numeric"
           value={selectedMovie.rating.toString()}
@@ -202,7 +210,9 @@ export default function EditMovie() {
         />
 
         <Pressable style={styles.button} onPress={HandleSubmit}>
-          <Text style={{fontSize: 18, color: 'white'}}>Save changes</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            {i18n.t('editMovie.submitBtn')}
+          </Text>
         </Pressable>
       </View>
     </KeyboardAwareScrollView>

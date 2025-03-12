@@ -2,6 +2,8 @@ import React from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import MovieCard from '../components/MovieCard';
 import {useDataContext} from '../contexts/DataContext';
+import Footer from '../components/Footer';
+import i18n from '../config/i18n';
 
 export default function MoviesList() {
   const {movies, colors} = useDataContext();
@@ -31,7 +33,9 @@ export default function MoviesList() {
 
   return (
     <FlatList
-      ListHeaderComponent={<Text style={styles.label}>My collection</Text>}
+      ListHeaderComponent={
+        <Text style={styles.label}>{i18n.t('home.collection')}</Text>
+      }
       ListEmptyComponent={
         <Text style={styles.emptyListMsg}>
           No movies collected. Please add your favorites by pressing the plus
@@ -43,6 +47,7 @@ export default function MoviesList() {
       data={movies}
       renderItem={({item}) => <MovieCard movie={item} />}
       ItemSeparatorComponent={<View style={styles.separator}></View>}
+      ListFooterComponent={<Footer />}
     />
   );
 }

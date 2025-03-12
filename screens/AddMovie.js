@@ -10,7 +10,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useDataContext} from '../contexts/DataContext';
 import {useEffect, useRef, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-
+import i18n from '../config/i18n';
 
 export default function AddMovie() {
   const [newMovie, setNewMovie] = useState({});
@@ -47,7 +47,10 @@ export default function AddMovie() {
       !newMovie.genres ||
       !newMovie.rating
     ) {
-      Alert.alert('Oops!', 'Please fill in all fields before submitting.');
+      Alert.alert(
+        i18n.t('alerts.missingFieldAlertTitle'),
+        i18n.t('alerts.missingFieldAlertMsg'),
+      );
       return;
     }
     setMovies([{...newMovie, id: movies.length + 2}, ...movies]);
@@ -84,15 +87,14 @@ export default function AddMovie() {
   return (
     <KeyboardAwareScrollView
       enableOnAndroid={true}
-    //   extraScrollHeight={80}
       keyboardShouldPersistTaps="handled"
       contentContainerStyle={{flexGrow: 1}}
       style={{flex: 1, backgroundColor: colors.appBgColor}}>
       <View style={styles.form}>
-        <Text style={styles.label}>New movie :</Text>
+        <Text style={styles.label}>{i18n.t('addMovie.label')}</Text>
         <TextInput
           style={styles.input}
-          placeholder="Movie's title..."
+          placeholder={i18n.t('addMovie.movieTitlePH')}
           placeholderTextColor={colors.textPlaceholderColor}
           autoCapitalize={false}
           autoCorrect={false}
@@ -105,7 +107,7 @@ export default function AddMovie() {
         />
         <TextInput
           style={styles.input}
-          placeholder="Poster's URL..."
+          placeholder={i18n.t('addMovie.moviePosterPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           autoCapitalize={false}
           autoCorrect={false}
@@ -117,7 +119,7 @@ export default function AddMovie() {
         />
         <TextInput
           style={styles.input}
-          placeholder="Release year..."
+          placeholder={i18n.t('addMovie.movieReleaseYearPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           keyboardType="numeric"
           onChangeText={value => setNewMovie({...newMovie, releaseYear: value})}
@@ -127,7 +129,7 @@ export default function AddMovie() {
         />
         <TextInput
           style={[styles.input, {height: 100, textAlignVertical: 'top'}]}
-          placeholder="Description..."
+          placeholder={i18n.t('addMovie.movieDescriptionPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           multiline
           autoCapitalize={false}
@@ -139,7 +141,7 @@ export default function AddMovie() {
         />
         <TextInput
           style={styles.input}
-          placeholder="IMDB URL..."
+          placeholder={i18n.t('addMovie.movieImdbPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           autoCapitalize={false}
           autoCorrect={false}
@@ -151,12 +153,15 @@ export default function AddMovie() {
         />
         <TextInput
           style={styles.input}
-          placeholder="Genre(s)...[ separated by commas ]"
+          placeholder={i18n.t('addMovie.movieGenresPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           onChangeText={value =>
             setNewMovie({
               ...newMovie,
-              genres: value.split(',').map(genre => genre.trim()),
+              genres: value
+                .trim()
+                .split(',')
+                .map(genre => genre.trim()),
             })
           }
           returnKeyType="next"
@@ -165,7 +170,7 @@ export default function AddMovie() {
         />
         <TextInput
           style={styles.input}
-          placeholder="Your Rating...[ from 0 to 10 ]"
+          placeholder={i18n.t('addMovie.movieRatingPH')}
           placeholderTextColor={colors.textPlaceholderColor}
           keyboardType="numeric"
           onChangeText={value => setNewMovie({...newMovie, rating: value})}
@@ -175,7 +180,9 @@ export default function AddMovie() {
         />
 
         <Pressable style={styles.button} onPress={HandleSubmit}>
-          <Text style={{fontSize: 18, color: 'white'}}>Add</Text>
+          <Text style={{fontSize: 18, color: 'white'}}>
+            {i18n.t('addMovie.submitBtn')}
+          </Text>
         </Pressable>
       </View>
     </KeyboardAwareScrollView>

@@ -10,6 +10,9 @@ import Movie from '../screens/Movie';
 import ImdbBtn from './ImdbBtn';
 import EditMovie from '../screens/EditMovie';
 import NewMovieBtn from './NewMovieBtn';
+import Languages from '../screens/Languages';
+import i18n from '../config/i18n';
+import SomberMode from '../screens/SomberMode';
 
 export default function Main() {
   const Stack = createNativeStackNavigator();
@@ -38,9 +41,16 @@ export default function Main() {
           <Stack.Screen
             name="Home"
             component={MoviesList}
-            options={{headerRight: () => <NewMovieBtn />}}
+            options={{
+              title: i18n.t('home.header'),
+              headerRight: () => <NewMovieBtn />,
+            }}
           />
-          <Stack.Screen name="Add Movie" component={AddMovie} />
+          <Stack.Screen
+            name="Add Movie"
+            component={AddMovie}
+            options={{title: i18n.t('addMovie.header')}}
+          />
           <Stack.Screen
             name="Movie"
             component={Movie}
@@ -48,7 +58,21 @@ export default function Main() {
               headerRight: () => <ImdbBtn />,
             })}
           />
-          <Stack.Screen name="Edit Movie" component={EditMovie} />
+          <Stack.Screen
+            name="Edit Movie"
+            component={EditMovie}
+            options={{title: i18n.t('editMovie.header')}}
+          />
+          <Stack.Screen
+            name="Languages"
+            component={Languages}
+            options={{title: i18n.t('languagePicker.header')}}
+          />
+          <Stack.Screen
+            name="Somber Mode"
+            component={SomberMode}
+            options={{title: i18n.t('somberMode.header')}}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
