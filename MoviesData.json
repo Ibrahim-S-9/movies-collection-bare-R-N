@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "The Godfather",
+    "posterURL": "https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/kWQAAOSwArteJsIw/$_57.JPG?set_id=8800005007",
+    "releaseYear": 1972,
+    "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "imdbURL": "https://www.imdb.com/title/tt0068646/",
+    "genres": ["Crime", "Drama"],
+    "rating": 8.8
+  },
+  {
+    "id": 2,
+    "title": "Inception",
+    "posterURL": "https://i.ebayimg.com/images/g/f6EAAOSwk5FUwoOs/s-l1200.jpg",
+    "releaseYear": 2010,
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+    "imdbURL": "https://www.imdb.com/title/tt1375666/",
+    "genres": ["Action", "Sci-Fi", "Thriller"],
+    "rating": 8.8
+  },
+  {
+    "id": 3,
+    "title": "The Dark Knight",
+    "posterURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-CMMMAMJpRvHzBzOGLWeqM_O3qsqd6H2YNg&s",
+    "releaseYear": 2008,
+    "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+    "imdbURL": "https://www.imdb.com/title/tt0468569/",
+    "genres": ["Action", "Crime", "Drama", "Thriller"],
+    "rating": 9.0
+  },
+  {
+    "id": 4,
+    "title": "Interstellar",
+    "posterURL": "https://i.ebayimg.com/images/g/zu4AAOSw2spbJQ0J/s-l1200.jpg",
+    "releaseYear": 2014,
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "imdbURL": "https://www.imdb.com/title/tt0816692/",
+    "genres": ["Adventure", "Drama", "Sci-Fi"],
+    "rating": 8.6
+  },
+  {
+    "id": 5,
+    "title": "The Matrix",
+    "posterURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuOWir5kYfmiz7NvxlFJzta4ib2-oaKCCoA&s",
+    "releaseYear": 1999,
+    "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "imdbURL": "https://www.imdb.com/title/tt0133093/",
+    "genres": ["Action", "Sci-Fi"],
+    "rating": 8.7
+  },
+  {
+    "id": 6,
+    "title": "Forrest Gump",
+    "posterURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBdfAcICLQCbnTzNru5reeqZjZIn0Lp1Fapw&s",
+    "releaseYear": 1994,
+    "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold through the perspective of an Alabama man with an IQ of 75.",
+    "imdbURL": "https://www.imdb.com/title/tt0109830/",
+    "genres": ["Drama", "Romance"],
+    "rating": 8.8
+  },
+  {
+    "id": 7,
+    "title": "The Shawshank Redemption",
+    "posterURL": "https://image.tmdb.org/t/p/original/5OWFF1DhvYVQiX1yUrBE9CQqO5t.jpg",
+    "releaseYear": 1994,
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "imdbURL": "https://www.imdb.com/title/tt0111161/",
+    "genres": ["Drama"],
+    "rating": 9.3
+  },
+  {
+    "id": 8,
+    "title": "Pulp Fiction",
+    "posterURL": "https://m.media-amazon.com/images/I/91adVNCQcIL._AC_UF894,1000_QL80_.jpg",
+    "releaseYear": 1994,
+    "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "imdbURL": "https://www.imdb.com/title/tt0110912/",
+    "genres": ["Crime", "Drama"],
+    "rating": 8.9
+  },
+  {
+    "id": 9,
+    "title": "Fight Club",
+    "posterURL": "https://static.wikia.nocookie.net/filmguide/images/0/07/Fight-club-poster.jpg/revision/latest?cb=20210207224108",
+    "releaseYear": 1999,
+    "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+    "imdbURL": "https://www.imdb.com/title/tt0137523/",
+    "genres": ["Drama"],
+    "rating": 8.8
+  },
+  {
+    "id": 10,
+    "title": "The Lord of the Rings: The Return of the King",
+    "posterURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx8q_b70iZ_yIfWCq5zhq13NYWJDpXQXky2Q&s",
+    "releaseYear": 2003,
+    "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to save Middle-Earth.",
+    "imdbURL": "https://www.imdb.com/title/tt0167260/",
+    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
+    "rating": 8.9
+  }
+]
