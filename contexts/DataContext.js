@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from 'react';
+import {createContext, useContext, useEffect, useState} from 'react';
 import MoviesData from '../MoviesData.json';
 import {usethemeProvider} from '../styles/globalVariables';
 import {useColorScheme} from 'react-native';
@@ -13,7 +13,12 @@ export function DataContextProvider({children}) {
   const [selectedMovie, setSelectedMovie] = useState({});
   const isDarkMode = useColorScheme() === 'dark';
   const [darkModeswitch, setDarkModeSwitch] = useState(isDarkMode);
-  const colors = usethemeProvider(isDarkMode && darkModeswitch);
+
+  useEffect(() => {
+    setDarkModeSwitch(isDarkMode);
+  }, [isDarkMode]);
+
+  const colors = usethemeProvider(darkModeswitch);
 
   const [locale, setLocale] = useState(i18n.locale);
 

@@ -44,7 +44,7 @@ export default {
     header: 'Languages',
   },
   somberMode: {
-    header: 'Somber Moder',
+    header: 'Somber Mode',
     subTitle: 'Dark mode status:',
   },
   alerts: {
