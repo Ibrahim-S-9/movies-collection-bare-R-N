@@ -42,19 +42,6 @@ export default {
   },
   languagePicker: {
     header: '言語',
-    languages: [
-      {code: 'en', name: '英語'},
-      {code: 'es', name: 'スペイン語'},
-      {code: 'fr', name: 'フランス語'},
-      {code: 'de', name: 'ドイツ語'},
-      {code: 'it', name: 'イタリア語'},
-      {code: 'pt', name: 'ポルトガル語'},
-      {code: 'ru', name: 'ロシア語'},
-      {code: 'zh', name: '中国語(簡体字)'},
-      {code: 'ja', name: '日本語'},
-      {code: 'ko', name: '韓国語'},
-      {code: 'ar', name: 'アラビア語'},
-    ],
   },
   somberMode: {
     header: 'ダークモード',

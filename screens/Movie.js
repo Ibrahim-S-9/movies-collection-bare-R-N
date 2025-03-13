@@ -28,12 +28,16 @@ export default function Movie() {
 
   const handleDeletion = () => {
     Alert.alert(
-      'Delete confirmation',
-      'Are you sure you want to proceed?',
+      i18n.t('alerts.dltAlertTitle'),
+      i18n.t('alerts.dltAlertMsg'),
       [
-        {text: 'Cancel', onPress: () => {}, style: 'cancel'},
         {
-          text: 'Yes',
+          text: i18n.t('alerts.alertCancelBtn'),
+          onPress: () => {},
+          style: 'cancel',
+        },
+        {
+          text: i18n.t('alerts.alertYesBtn'),
           onPress: () => {
             setMovies(movies.filter(item => item.id !== movie.id));
             navigation.goBack();

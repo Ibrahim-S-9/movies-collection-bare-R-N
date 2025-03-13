@@ -42,19 +42,6 @@ export default {
   },
   languagePicker: {
     header: 'اللغات',
-    languages: [
-      {code: 'en', name: 'الإنجليزية'},
-      {code: 'es', name: 'الإسبانية'},
-      {code: 'fr', name: 'الفرنسية'},
-      {code: 'de', name: 'الألمانية'},
-      {code: 'it', name: 'الإيطالية'},
-      {code: 'pt', name: 'البرتغالية'},
-      {code: 'ru', name: 'الروسية'},
-      {code: 'zh', name: 'الصينية (المبسطة)'},
-      {code: 'ja', name: 'اليابانية'},
-      {code: 'ko', name: 'الكورية'},
-      {code: 'ar', name: 'العربية'},
-    ],
   },
   somberMode: {
     header: 'الوضع المظلم',
